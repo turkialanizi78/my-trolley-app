@@ -411,7 +411,7 @@ const TrolleyForm = ({ trolley }) => {
       <div className="print-content container btn-container">
        
         <Button onClick={handleJustRetern} className="btn btn-succes">
-        <HandThumbsUp className="ic" size="20"/>
+        <HandThumbsUp className="ic" />
           Return In
         </Button>
       
@@ -419,11 +419,11 @@ const TrolleyForm = ({ trolley }) => {
         onClick={handleFetchRelatedTrolleys}
 
         >
-        <HandThumbsDown className="ic" size="20"/>
+        <HandThumbsDown className="ic" />
         Not Return
         </Button>
         <Button aria-label="Print"  className="btn btn-dark" onClick={handlePrintClick}>
-        <Printer className="ic" size="20"/>
+        <Printer className="ic" />
           Print All
         </Button>
         <Button
@@ -431,7 +431,7 @@ const TrolleyForm = ({ trolley }) => {
         onClick={handleSaveClick}
         disabled={trolley && trolley.isOutside}
       >
-      <CartCheck className="ic" size="20"/>
+      <CartCheck className="ic" />
         Just Save
       </Button>
         <Button
@@ -439,7 +439,7 @@ const TrolleyForm = ({ trolley }) => {
           onClick={handleSaveAndPrintClick}
           disabled={trolley && trolley.isOutside}
         >
-        <PrinterFill className="ic" size="20"/>
+        <PrinterFill className="ic" />
           Save and Print
         </Button>
 
@@ -542,7 +542,7 @@ const TrolleyForm = ({ trolley }) => {
           <TermsCondition />
         </div>
 
-        <div>
+        <div style={{display:'none'}}>
           {/* Rightn Received */}
           <RightReceivedComponent
             currentDate={currentDate}
