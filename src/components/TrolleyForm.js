@@ -480,7 +480,7 @@ const TrolleyForm = ({ trolley }) => {
                 <p className="m2-p"></p>
                 <p className="m2-p">موقع</p>
               </span>
-              <p>الموظف: {user.employeeData.firstName}</p>
+              <p>الموظف: {user ? user.employeeData.firstName : 'user'}</p>
             </p>
           </div>
           {trolley &&
