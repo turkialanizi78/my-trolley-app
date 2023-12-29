@@ -78,8 +78,8 @@ const Login = () => {
       notify('تم تسجيل الدخول بنجاح');
 
       setTimeout(() => {
-         window.location.href = '/';
-        // navigate('/');
+        // window.location.href = '/';
+        navigate('/');
       }, 1500);
     } catch (error) {
       if (error.response && error.response.status === 429) {

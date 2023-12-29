@@ -31,8 +31,8 @@ const Navbar = () => {
         localStorage.removeItem('user');
         localStorage.removeItem('location');
         setTimeout(() => {
-          window.location.href = '/';
-         // navigate('/');
+         // window.location.href = '/';
+         navigate('/');
        }, 100);
       };
     
