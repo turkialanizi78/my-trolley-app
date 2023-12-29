@@ -49,7 +49,7 @@ const Login = () => {
     try {
       // Make a POST request to the login endpoint
        //const response = await axios.post('https://lionfish-app-2ysfl.ondigitalocean.app/trolley/login', {
-         //const response = await axios.post('http://localhost:8000/trolley/login', {
+          //const response = await axios.post('http://localhost:8000/trolley/login', {
          const response = await axios.post('https://trolley-backend.onrender.com/trolley/login', {
 
         
@@ -79,7 +79,7 @@ const Login = () => {
 
       setTimeout(() => {
          //window.location.href = '/';
-        navigate('/trolleys');
+    navigate('/trolleys/');
       }, 1500);
     } catch (error) {
       if (error.response && error.response.status === 429) {
