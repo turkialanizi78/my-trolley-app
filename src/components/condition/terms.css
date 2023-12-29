@@ -16,4 +16,8 @@
    
     
   }
- 
+  @media screen and (max-width: 600px) {
+   ul , ui {
+      font-size: 8px ;
+    }
+  }

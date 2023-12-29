@@ -7,7 +7,7 @@ import { Button, Pagination } from "react-bootstrap";
 import { useUser } from "../../hooks/UserContext";
 import   { useReactToPrint } from "react-to-print";
 import ProtectedRoutHook from "../../auth/ProtectedRoutHook";
-
+import './TrolleyTable.css'
 const TrolleyTable = ({ trolleys,  onDelete, onUpdate }, ref) => {
   const [ isUser, isAdmin,isManager] = ProtectedRoutHook();
   const componentRef = useRef();

@@ -38,15 +38,7 @@
     margin-top: 20px;
   }
   
-  #employee-form th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
   
-  #employee-form th {
-    background-color: #f2f2f2;
-  }
   
   /* Button styling */
   #employee-form .btn {

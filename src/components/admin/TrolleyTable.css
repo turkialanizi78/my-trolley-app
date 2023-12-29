@@ -1,92 +1,110 @@
- 
-  
-  /* Style the table */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
- 
- 
+/* Add this CSS to your stylesheet or style block */
+body{
+  font-family: 'Almarai' !important;
+}
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 
- 
- 
-
- .Admincontainer{ 
-  margin: 10px;
- }
-
-
- @media print {
-  .btn {
-    display: none !important;
-  }
 }
 
-.print-table {
-  /* Your regular table styles here */
-
-  @media print {
-    /* Styles for printing */
-    font-size: 10pt;
-    /* Add more styles as needed */
-  }
+/* Section title styles */
+.title-admin-dash {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Almarai';
 }
 
-
-.print-button{
-  margin-left: 20px;
-  background-color: rgb(63, 5, 12);
-  color: #ddd;
-  font-weight: 700;
-  border-radius: 8px;
-  border: none;
-  padding: 6px;
-  width: 120px;
-}
- 
-.print-button:hover{
-  background-color: rgba(63, 5, 12, 0.463);
-}
-
-
+/* Filtering section styles */
 #filterTrolleyByDate {
-  display: grid;
-  grid-template-columns: auto 1fr;
- max-width: 200px;
- align-content: center;
-margin: auto;
-text-align: center;
-}
-#filterTrolleyByDate div {
- margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .filterTrolley-Start,
 .filterTrolley-End,
-label,
-select,
-input {
+div:not(#filterTrolleyByDate) > label {
+  margin-right: 20px;
   margin-bottom: 10px;
 }
 
-.filterTrolley-Start,
-.filterTrolley-End {
-  flex-basis: 48%;
+/* Form input styles */
+form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-label {
-  display: block;
-  font-weight: bold;
+/* Print button styles */
+.print-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-input,
-select,
-button {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Table styles */
+.print-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Action buttons styles */
+.btn {
   margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
- 
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Pagination styles */
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination-item {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-right: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination-item.active {
+  background-color: #28a745;
+}

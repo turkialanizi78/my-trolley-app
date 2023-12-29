@@ -125,13 +125,13 @@ const AdminComponent = () => {
       <div className='Admincontainer'>
     
       {!isManager && (
-     <div>
+     <div className='buttonAdminComponent'>
       
-     <Button onClick={() => handlePageChange('logs')}  className='btn btn-danger' style={{width:'auto',marginLeft:'5px' , fontSize:'1rem'}} > <Reception3 className="ic" size="20"/> LOGS </Button>
-     <Button onClick={() => handlePageChange('dashPoardPage')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Revenue </Button>
-     <Button onClick={() => handlePageChange('trolleyNumber')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Trolley's </Button>
-     <Button onClick={() => handlePageChange('admins')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Admin's  </Button>
-     <Button onClick={() => handlePageChange('employee')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Employess </Button>
+     <Button onClick={() => handlePageChange('logs')}  className='btn btn-danger' style={{width:'auto',margin:'5px' , fontSize:'1rem'}} > <Reception3 className="ic" size="20"/> LOGS </Button>
+     <Button onClick={() => handlePageChange('dashPoardPage')}  className='btn btn-danger' style={{width:'auto' ,margin:'5px', fontSize:'1rem'}} > Revenue </Button>
+     <Button onClick={() => handlePageChange('trolleyNumber')}  className='btn btn-danger' style={{width:'auto' ,margin:'5px', fontSize:'1rem'}} > Trolley's </Button>
+     <Button onClick={() => handlePageChange('admins')}  className='btn btn-danger' style={{width:'auto' ,margin:'5px', fontSize:'1rem'}} > Admin's  </Button>
+     <Button onClick={() => handlePageChange('employee')}  className='btn btn-danger' style={{width:'auto' ,margin:'5px', fontSize:'1rem'}} > Employess </Button>
  
     
      </div>

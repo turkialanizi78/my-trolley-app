@@ -1,33 +1,32 @@
- .login-body{
+.login-body{
  
- }
+}
 
 .login-container{
-    background-color: azure;
-    width: 300px;
-    margin: auto;
-    margin-top: 50px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-     
+   background-color: azure;
+   width: 300px;
+   margin: auto;
+   margin-top: 50px;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+    
 }
 .login-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
- .login-label{
-    margin: 10px 0;
- }
-   
- .login-container button{
-    padding: 5px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    width: 140px;
-    cursor: pointer;
- }
- 
+.login-label{
+   margin: 10px 0;
+}
+  
+.login-container button{
+   padding: 5px;
+   background-color: #4caf50;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   width: 140px;
+   cursor: pointer;
+}

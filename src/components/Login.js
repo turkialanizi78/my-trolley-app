@@ -6,6 +6,7 @@ import { notify, notifyError } from '../Utility/useNotifaction';
 import ShowMessageHook from '../hooks/ShowMessageHook';
 import './login.css';
 import { logUserAction } from '../services/api';
+import { PersonHeart } from 'react-bootstrap-icons';
 
 const Login = () => {
   const [message, , showMessage] = ShowMessageHook();
@@ -101,7 +102,7 @@ const Login = () => {
       <div className="login-container">
         {message && <p style={{ color: 'red' }}>{message}</p>}
 
-        <h2>Login</h2>
+        <h2 style={{textAlign:'center',fontWeight:'600',fontFamily:'Poppins',color:'red'}}> <PersonHeart color='red' size="30"/>  Login</h2>
         <form className="login-form" onSubmit={handleSubmit}>
           <label className="login-label">
             Username:
