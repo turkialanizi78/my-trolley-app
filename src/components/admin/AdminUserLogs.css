@@ -1,0 +1,40 @@
+/* AdminUserLogs.css */
+
+.admin-user-logs {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+  }
+  
+  .log-entry {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .log-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+  }
+  
+  .log-details div {
+    margin-bottom: 5px;
+  }
+
+
+  /* Add this to your CSS */
+ .date-picker-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+ }
+ .date-picker-container input{
+width: 300px !important;
+border-radius: 10px;
+padding: 4px;
+  
+ }
+ 

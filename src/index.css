@@ -1,0 +1,22 @@
+body{
+  font-family: 'Almarai';
+ margin-bottom: 50px;
+ padding: 0;
+ 
+ box-sizing: border-box;
+  /* font-family: 'Almarai,Roboto ,Poppins'; */
+}
+ 
+@media print {
+  .print-content,
+  .my-2,
+  .mx-1 {
+    display: none;
+  }
+}
+
+.btn:hover{
+  opacity: 0.5;
+  color: rgb(0, 0, 0);
+}
+

@@ -1,0 +1,61 @@
+ 
+ 
+.container h1{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+  .trolyTitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* TrolleyList.css */
+  .trolleyList {
+   
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
+  
+  
+  }
+  
+  
+  Link,
+  a {
+    text-decoration: none !important;
+    color: #000000 !important;
+    max-width: 160px !important;
+  }
+  
+
+  .trolleyItem {
+    position: relative;
+    text-align: center;
+  }
+  
+  .numTrolly {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(111, 171, 20);
+    color: #570606;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    z-index: 1; /* Ensure the number is above the image */
+  }
+  
+  .trolly-image {
+    width: 150px;
+    height: 150px;
+    background-color: transparent !important;
+    z-index: 0; /* Ensure the image is below the number */
+  }
+ 
+  /* trolley.css */
+.outsideStyle {
+    background-color: red; /* Change to your desired color for outside trolleys */
+    opacity: 0.5; /* Set opacity for outside trolleys */
+  }
+  

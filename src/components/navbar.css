@@ -1,0 +1,15 @@
+.navbar{
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.navbar button{
+    background-color: black;
+    color: antiquewhite;
+    border: none !important;
+}
+.navbar button:hover{
+    color: green;
+    cursor: pointer;
+}

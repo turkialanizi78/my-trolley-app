@@ -1,0 +1,37 @@
+
+/* A6 Container Styles */
+.A6Container {
+    width: 105mm; /* A6 width in millimeters */
+    height: 148mm; /* A6 height in millimeters */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 10mm; /* Add padding if needed */
+    box-sizing: border-box; /* Include padding in the total width and height */
+  }
+  
+  /* Additional styles if needed */
+  .A6Container p {
+    font-size: 12px; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height as needed */
+  }
+  
+.frame-Right-container {
+    /* Additional styles for the right container, if needed */
+    display: grid;
+    grid-template-columns: 1fr   ;
+    padding: 0;
+    margin-bottom: auto;
+  }
+  .right-receive-No input{
+    border: none;
+    width: 60px;
+  }
+  .loc-form-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.r-secur-deposit{
+    display: grid ;
+    grid-template-columns: 1fr;
+}
+ 

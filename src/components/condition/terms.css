@@ -1,0 +1,19 @@
+.terms-container{
+    
+    padding: 10px;
+}
+
+#trem-grid{
+    display: flex;
+    justify-content: space-between;
+}
+.arabic-list {
+    direction: rtl;
+  }
+
+  #Right-TermsCondition{
+    font-size: 12px;
+   
+    
+  }
+ 
