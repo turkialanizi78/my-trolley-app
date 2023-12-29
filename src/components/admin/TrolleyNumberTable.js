@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Pagination } from 'react-bootstrap';
 import './TrolleyNumberTable.css'
-import EmployeeManagement from './EmployeeManagement ';
-import AddAdminComponent from './AddAdminComponent';
+ 
 import ShowMessageHook from '../../hooks/ShowMessageHook';
 const TrolleyNumberTable = ({ trolleyNumbers, onDelete, onUpdate, onAdd }) => {
 
@@ -144,13 +143,9 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
   <Button onClick={handleAddClick}>Add</Button>
     </div>
     </div>
-    <div>
-    <EmployeeManagement/>
-    </div>
+     
 
-    <div className='add-admin-form'>
-    <AddAdminComponent/>
-    </div>
+    
   </div>
 );
 };

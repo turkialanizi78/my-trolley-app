@@ -5,9 +5,12 @@ import { getAllTrolleys, updateTrolley, deleteTrolley, getAllTrolleyNumbers, add
 import TrolleyTable from './TrolleyTable';
 import TrolleyNumberTable from './TrolleyNumberTable';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+ 
 import { Reception3 } from 'react-bootstrap-icons';
 import ProtectedRoutHook from '../../auth/ProtectedRoutHook';
+import EmployeeManagement from './EmployeeManagement ';
+import AdminUserLogs from './AdminUserLogs';
+import AddAdminComponent from './AddAdminComponent';
 
 const AdminComponent = () => {
   const [trolleys, setTrolleys] = useState([]);
@@ -89,18 +92,53 @@ const AdminComponent = () => {
     }
   };
 
+
+  const [selectedPage, setSelectedPage] = useState('dashPoardPage');
+
+  const handlePageChange = (page) => {
+    setSelectedPage(page);
+  };
+
+  const renderPageContent = () => {
+    switch (selectedPage) {
+      case 'dashPoardPage':
+      return  <TrolleyTable trolleys={trolleys} onDelete={deleteExistingTrolley} onUpdate={updateExistingTrolley} />
+      case 'trolleyNumber':
+      return  <TrolleyNumberTable trolleyNumbers={trolleyNumbers} onDelete={deleteExistingTrolleyNumber} onUpdate={updateExistingTrolleyNumber} onAdd ={addNewTrolleyNumber} />
+      case "admins":
+      return <AddAdminComponent/>
+      case 'employee':
+      return  <EmployeeManagement />
+      case 'logs':
+      return  <AdminUserLogs />
+        
+      // Add cases for other pages
+      default:
+        return null;
+    }
+  };
+
+
   return (
     <div>
       <Navbar />
       <div className='Admincontainer'>
-         {/* Render components, forms, or tables to display and interact with trolleys and trolley numbers */}
-      {/* Example: */}
-      {!isManager && (
-      <Link to={'/admin/user-logs'}><Button className='btn btn-danger' style={{width:'auto', marginTop:'20px',fontWeight:'900'}} > <Reception3 className="ic" size="20"/> USER LOGS</Button></Link> 
-      )}
-      <TrolleyTable trolleys={trolleys} onDelete={deleteExistingTrolley} onUpdate={updateExistingTrolley} />
-      <TrolleyNumberTable trolleyNumbers={trolleyNumbers} onDelete={deleteExistingTrolleyNumber} onUpdate={updateExistingTrolleyNumber} onAdd ={addNewTrolleyNumber} />
     
+      {!isManager && (
+     <div>
+      
+     <Button onClick={() => handlePageChange('logs')}  className='btn btn-danger' style={{width:'auto',marginLeft:'5px' , fontSize:'1rem'}} > <Reception3 className="ic" size="20"/> LOGS </Button>
+     <Button onClick={() => handlePageChange('dashPoardPage')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Revenue </Button>
+     <Button onClick={() => handlePageChange('trolleyNumber')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Trolley's </Button>
+     <Button onClick={() => handlePageChange('admins')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Admin's  </Button>
+     <Button onClick={() => handlePageChange('employee')}  className='btn btn-danger' style={{width:'auto' ,marginLeft:'5px', fontSize:'1rem'}} > Employess </Button>
+ 
+    
+     </div>
+      )}
+     
+      {renderPageContent()}
+
       
       </div>
    </div>

@@ -4,7 +4,7 @@ import { addAdmin, deleteAdmin, getAdminEmployees, logUserAction, updateAdmin } 
 import ShowMessageHook from "../../hooks/ShowMessageHook";
 import { Button } from "react-bootstrap";
 import ProtectedRoutHook from "../../auth/ProtectedRoutHook";
- 
+import './admins.css'
  
 
 const AddAdminComponent = () => {
@@ -148,7 +148,7 @@ const AddAdminComponent = () => {
 
 
   return (
-    <div>
+    <div id="adminsComponent">
       <h2 style={{textAlign:'right'}} >إدارة المدراء</h2>
       {message && <div style={{ color: messageColor }}>{message}</div>}
       

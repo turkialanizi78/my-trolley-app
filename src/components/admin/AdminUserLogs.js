@@ -60,7 +60,7 @@ const AdminUserLogs = () => {
 
   return (
     <div>
-    <Navbar/>
+  
     <div className="admin-user-logs">
       <h2>Admin User Logs</h2>
     
@@ -74,7 +74,7 @@ const AdminUserLogs = () => {
         />
         </div>
            {/* Button to delete logs by date */}
-           <Button onClick={handleDeleteLogsByDate}>Delete Logs by Date</Button>
+           <Button style={{width:'auto'}} onClick={handleDeleteLogsByDate}>Delete Logs by Date</Button>
       </div>
       <ul>
         {currentLogs.map((log) => (

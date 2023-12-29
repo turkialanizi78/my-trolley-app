@@ -7,7 +7,7 @@ import Login from './components/Login';
 import ProtectRout from './Utility/ProtectRout';
 import ProtectedRoutHook from './auth/ProtectedRoutHook';
 import AdminComponent from './components/admin/AdminComponent';
-import AdminUserLogs from './components/admin/AdminUserLogs';
+ 
 import "bootstrap/dist/css/bootstrap.min.css"
 function App() {
   const [isUser, isAdmin ,isManager] = ProtectedRoutHook();
@@ -24,7 +24,7 @@ function App() {
       </Route>
       <Route element={<ProtectRout auth={isAdmin || isManager } />}>
         <Route path="/admin" element={<AdminComponent />} />
-        <Route path="/admin/user-logs" element={<AdminUserLogs />} />
+        
       </Route>
     </Routes>
   );

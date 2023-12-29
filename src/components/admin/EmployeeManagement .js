@@ -4,7 +4,7 @@ import { addEmployee, getAllEmployees, updateEmployee, deleteEmployee } from "..
 import ShowMessageHook from './../../hooks/ShowMessageHook';
 import { Button } from "react-bootstrap";
 import ProtectedRoutHook from "../../auth/ProtectedRoutHook";
-
+import './employee.css' 
 const EmployeeManagement = () => {
   const [isAManager, setIsAManager] = useState(false);
   const [message,messageColor,showMessage] = ShowMessageHook();
@@ -165,7 +165,10 @@ const EmployeeManagement = () => {
   };
 
   return (
-    <div>
+    <div id="employee-form">
+    <div className='add-admin-form'>
+   
+    </div>
       <h2 style={{ textAlign: 'right' }}>Employee Management</h2>
       {message && <div style={{ color: messageColor }}>{message}</div>}
       <div>
@@ -226,15 +229,16 @@ const EmployeeManagement = () => {
             onChange={(e) => handleEmployeeDataChange("email", e.target.value)}
           />
         </label>
-        <label>
+        <div class="form-check">
+        <label   >
         Is Manager:
         <input
-          type="checkbox"
+        class="form-check-input" type="checkbox"
           checked={isAManager}   
           onChange={handleCheckboxChange}
         />
       </label>
-      
+      </div>
       {!isManager && (
         <Button style={{fontSize:'10px', width:'120px',fontWeight:'700'}} className="btn btn-success" onClick={handleAddEmployee}>
           {selectedEmployeeId ? "Update Employee" : "Add Employee"}

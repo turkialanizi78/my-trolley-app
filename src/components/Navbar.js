@@ -23,27 +23,27 @@ const Navbar = () => {
  
   // عمل خروج ومسح الكوكيز عند اغلاق الصفحة
  
-    // useEffect(() => {
-    //   const handleUnload = () => {
-    //     // Perform cleanup operations when the user closes the entire project
+    useEffect(() => {
+      const handleUnload = () => {
+        // Perform cleanup operations when the user closes the entire project
         
-    //     localStorage.removeItem('token');
-    //     localStorage.removeItem('user');
-    //     localStorage.removeItem('location');
-    //     setTimeout(() => {
-    //      // window.location.href = '/';
-    //      navigate('/');
-    //    }, 100);
-    //   };
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        localStorage.removeItem('location');
+        setTimeout(() => {
+         // window.location.href = '/';
+         navigate('/');
+       }, 100);
+      };
     
-    //   // Add the event listener when the component mounts
-    //   window.addEventListener('unload', handleUnload);
+      // Add the event listener when the component mounts
+      window.addEventListener('unload', handleUnload);
     
-    //   // Remove the event listener when the component unmounts
-    //   return () => {
-    //     window.removeEventListener('unload', handleUnload);
-    //   };
-    // }, [navigate]);
+      // Remove the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('unload', handleUnload);
+      };
+    }, [navigate]);
    
 
 

@@ -7,38 +7,11 @@
     margin-top: 20px;
   }
   
-  /* Style the table header */
-  thead {
-    background-color: #f2f2f2;
-  }
-  
-  th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Style alternating rows for better readability */
-  tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
- .Admincontainer .btn{
-margin-left: 5px;
-width: 80px;
-height: 40px;
- }
-
- .Admincontainer input{
-  height: 30px;
+ 
  
 
- }
- .Admincontainer input:hover{
- border: 2px solid rgba(46, 70, 46, 0.438) !important;
- background-color: rgba(0, 128, 0, 0.219);
-
- } 
+ 
+ 
 
  .Admincontainer{ 
   margin: 10px;
