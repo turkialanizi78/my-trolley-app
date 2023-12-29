@@ -28,6 +28,8 @@ const Navbar = () => {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       localStorage.removeItem('location');
+
+      navigate('/');
     };
 
     // Add the event listener when the component mounts
@@ -37,7 +39,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('unload', handleUnload);
     };
-  }, []);
+  }, [navigate]);
    
 
 
