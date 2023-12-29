@@ -103,18 +103,18 @@ const TrolleyForm = ({ trolley }) => {
     try {
       const response = await getAllTrolleys();
       const existingTrolleys = response.data.trolleys;
-
+  
       // Check if the current trolley number already exists
       const isTrolleyExists = existingTrolleys.some(
         (t) => t.balanceNumber === trolley.balanceNumber
       );
-
+  
       if (isTrolleyExists) {
         // Trolley already exists, you can choose to show a notification or handle it as needed
         notify("Trolley balance already saved.");
-
         return;
       }
+  
       // Update the fields based on your form
       const newTrolleyData = {
         balanceNumber: lastBalanceNumber,
@@ -122,10 +122,8 @@ const TrolleyForm = ({ trolley }) => {
         departureTime: currentDate,
         trolleyNumber: trolley.trolleyNumber,
         securityDeposit: securityDepositText,
-        //  returnTime : "2023-01-02T12:00:00.000Z",
-        pickupLocation:
-        userLocation ? userLocation : "Location A",
-        deliveryLocation: userLocation ? userLocation :"Location B",
+        pickupLocation: userLocation ? userLocation : "Location A",
+        deliveryLocation: userLocation ? userLocation : "Location B",
         rentalAmount: 2,
         remainingAmount: remaining,
         balancePrintDate: currentDate,
@@ -133,11 +131,10 @@ const TrolleyForm = ({ trolley }) => {
         staff: user.employeeData.firstName,
         // Add other fields from your form
       };
-
+  
       // Add validation or checks if needed
       await addTrolley(newTrolleyData); // Call the function to add a new trolley
-      // Open a new window or use a hidden iframe
-      const printWindow = window.open("", "_blank");
+  
       // Render the RightReceivedComponent as a string
       const rightComponentString = ReactDOMServer.renderToString(
         <RightReceivedComponent
@@ -150,67 +147,78 @@ const TrolleyForm = ({ trolley }) => {
           user={user}
         />
       );
-      // Include the styles directly in the HTML content
       const styles = `
-  <style>
-  .frame-Right-container {
-    /* Additional styles for the right container, if needed */
-    display: grid;
-    grid-template-columns: 1fr   ;
-    padding: 0;
-    margin-bottom: auto;
-  }
-  .right-receive-No input{
-    border: none;
-    width: 60px;
-  }
-  .loc-form-2{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.r-secur-deposit{
-    display: grid;
-    grid-template-columns: 1fr;
-}
-/* A6 Container Styles */
-.A6Container {
-  width: 105mm; /* A6 width in millimeters */
-  height: 148mm; /* A6 height in millimeters */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 10mm; /* Add padding if needed */
-  box-sizing: border-box; /* Include padding in the total width and height */
-}
-
-/* Additional styles if needed */
-.A6Container p {
-  font-size: 12px; /* Adjust font size as needed */
-  line-height: 1.5; /* Adjust line height as needed */
-}
-
- 
-  </style>
-`;
-      // Inject the rendered string into the new window
-      printWindow.document.write(`
-    <html>
-      <head>
-        <title>Print</title>
-        ${styles}
-      </head>
-      <body>
-        ${rightComponentString}
-      </body>
-    </html>
-  `);
-
+      <style>
+      #customerRecive{
+        display:block !important;
+       }
+      .frame-Right-container {
+        /* Additional styles for the right container, if needed */
+        display: grid;
+        grid-template-columns: 1fr   ;
+        padding: 0;
+        margin-bottom: auto;
+      }
+      .right-receive-No input{
+        border: none;
+        width: 60px;
+      }
+      .loc-form-2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .r-secur-deposit{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /* A6 Container Styles */
+    .A6Container {
+      width: 105mm; /* A6 width in millimeters */
+      height: 148mm; /* A6 height in millimeters */
+      margin: 0 auto; /* Center the container horizontally */
+      padding: 10mm; /* Add padding if needed */
+      box-sizing: border-box; /* Include padding in the total width and height */
+    }
+    
+    /* Additional styles if needed */
+    .A6Container p {
+      font-size: 12px; /* Adjust font size as needed */
+      line-height: 1.5; /* Adjust line height as needed */
+    }
+    #Form-Container-middle{
+      display:none;
+    }
+    
+      </style>
+    `;
+      // Create a new hidden div to inject the rendered content
+      const printContainer = document.createElement("div");
+      printContainer.style.display = "none";
+      printContainer.innerHTML = `
+        <html>
+          <head>
+            <title>Print</title>
+            <!-- Include your styles here if needed -->
+            ${styles}
+          </head>
+          <body>
+            ${rightComponentString}
+          </body>
+        </html>
+      `;
+  
+      // Append the hidden div to the document body
+      document.body.appendChild(printContainer);
+  
       // Trigger the print action
-      printWindow.print();
-      printWindow.document.close();
-
+      window.print();
+  
+      // Remove the hidden div from the document body
+      document.body.removeChild(printContainer);
+  
       notify("You added data successfully.");
-      await logUserAction("تم تأجير عربة وطباعة ايصال", {
-        // Add specific details as needed
+      logUserAction("تم تأجير عربة وطباعة ايصال", {
         page: window.location.pathname,
       });
     } catch (error) {
@@ -220,6 +228,7 @@ const TrolleyForm = ({ trolley }) => {
       }
     }
   };
+  
 
   const handleSecurityDepositChange = (event) => {
     const input = event.target.value;
@@ -542,7 +551,7 @@ const TrolleyForm = ({ trolley }) => {
           <TermsCondition />
         </div>
 
-        <div style={{display:'none'}}>
+        <div id="customerRecive" style={{display:'none'}} >
           {/* Rightn Received */}
           <RightReceivedComponent
             currentDate={currentDate}
