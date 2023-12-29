@@ -78,7 +78,7 @@ const Login = () => {
       notify('تم تسجيل الدخول بنجاح');
 
       setTimeout(() => {
-          window.location.href = '/trolleys';
+          window.location.href = '/';
     //navigate('/trolleys');
       }, 1500);
     } catch (error) {
