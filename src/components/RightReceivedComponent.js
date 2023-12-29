@@ -33,7 +33,7 @@ const RightReceivedComponent = ({ currentDate, currentTime, lastBalanceNumber, t
 <h7 >Time Out: {currentTime} :وقت المغادرة</h7>
 <div>
 <div>
-<h7>الموظف: {user ? user.employeeData.firstName : ''}</h7>
+<p>الموظف: {user && user.employeeData ? user.employeeData.firstName : ''}</p>
 </div>
 <span className='loc-form-2' >
 <p style={{ backgroundColor: "yellow" }} className="m2-p">
