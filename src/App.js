@@ -7,8 +7,11 @@ import Login from './components/Login';
 import ProtectRout from './Utility/ProtectRout';
 import ProtectedRoutHook from './auth/ProtectedRoutHook';
 import AdminComponent from './components/admin/AdminComponent';
- 
 import "bootstrap/dist/css/bootstrap.min.css"
+import initFontAwesome from './Utility/initFontAwesome';
+
+ 
+initFontAwesome();
 function App() {
   const [isUser, isAdmin ,isManager] = ProtectedRoutHook();
 

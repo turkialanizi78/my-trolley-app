@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { notify, notifyError } from '../Utility/useNotifaction';
 import ShowMessageHook from '../hooks/ShowMessageHook';
 import './login.css';
 import { logUserAction } from '../services/api';
 import { PersonHeart } from 'react-bootstrap-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from 'react-bootstrap';
 
 const Login = () => {
   const [message, , showMessage] = ShowMessageHook();
@@ -98,23 +100,26 @@ const Login = () => {
   };
 
   return (
-    <div className="login-body">
+    <div className="bodyLogin">
+   <div style={{display:'flex',justifyContent:'center'}} className='container'>
+   <div className="loginContainer">
+  
       <div className="login-container">
         {message && <p style={{ color: 'red' }}>{message}</p>}
 
         <h2 style={{textAlign:'center',fontWeight:'600',fontFamily:'Poppins',color:'red'}}> <PersonHeart color='red' size="30"/>  Login</h2>
         <form className="login-form" onSubmit={handleSubmit}>
-          <label className="login-label">
+          <label className="formInput">
             Username:
-            <input type="text" value={username} onChange={handleUsernameChange} style={styles.input} />
+            <input  placeholder="Type Your Name" type="text" value={username} onChange={handleUsernameChange}  className="inputFiled" />
           </label>
-          <label className="login-label">
+          <label className="mt-4 formInput">
             Password:
-            <input type="password" value={password} onChange={handlePasswordChange} style={styles.input} />
+            <input  placeholder="Type Your Password" type="password" value={password} onChange={handlePasswordChange}  className="inputFiled" />
           </label>
-          <label className="login-label">
-            Location:
-            <select value={selectedLocation} onChange={handleLocationChange} style={styles.input}>
+          <label className="mt-4">
+            
+            <select value={selectedLocation} onChange={handleLocationChange}  className="inputFiled">
               <option value="">Select Location</option>
               <option value="Gate:04">Gate:04</option>
               <option value="Gate:12">Gate:12</option>
@@ -122,22 +127,61 @@ const Login = () => {
               {/* Add more locations as needed */}
             </select>
           </label>
-          <button type="submit" className="button">
+         
+          <div className="mt-2">
+            <Link to={"/"}>
+              <p
+                style={{
+                  textAlign: "right",
+                  marginRight: "10px",
+                  color: "gray",
+                  fontSize: "12px",
+                }}
+              >
+                Forgat Password
+              </p>
+            </Link>
+          </div>
+          <Button type="submit" className="button btn btn-success w-50">
             Login
-          </button>
+          </Button>
+          <div className="mt-5">
+          <p>Or Sign Up Using</p>
+        </div>
         </form>
         <ToastContainer />
       </div>
+      <div
+      style={{ display: "flex", justifyContent: "center" }}
+      className="sochialMidiaLogin"
+    >
+      <Link to={"https://www.instagram.com/0_oturki?igsh=MTE1eW5yaDJ0cTZxbw%3D%3D&utm_source=qr "}>
+        <div className="facebook">
+          <FontAwesomeIcon icon={["fab", "instagram"]} />
+        </div>
+      </Link>
+      <Link to={"https://www.tiktok.com/@0_0turki?_t=8iaxLpfsTYY&_r=1"}>
+        <div className="twiter">
+          <FontAwesomeIcon icon={["fab", "tiktok"]} />
+        </div>
+      </Link>
+      <Link to={"https://github.com/turkialanizi78"}>
+        <div className="github">
+          <FontAwesomeIcon icon={["fab", "github"]} />
+        </div>
+      </Link>
     </div>
+    </div>
+    </div>
+    </div>
+       
   );
 };
 
 const styles = {
-  input: {
-    padding: '5px',
-    margin: '5px 0',
-    width: '100%',
-    boxSizing: 'border-box',
+  container: {
+  
+ 
   },
 };
 
